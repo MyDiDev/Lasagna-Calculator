@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <main class="px-4">
+        <section class="d-flex justify-content-center align-items-center vh-100">
+            <div class="bg-body-tertiary rounded p-3 shadow-sm" style="width: 400px;">
+                <h2 class="fw-bold mb-3">Calculadora de lasagna</h2>
+                <form method="post">
+                    <div class="mb-3">
+                        <label for="layer_num" class="form-label">Numero de capas:</label>
+                        <input type="number" id="layer_num" min="1" max="40" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="time_num" class="form-label">Tiempo que lleva en el
+                            horno(m):</label>
+                        <input type="number" id="time_num" min="1" max="40" class="form-control" required>
+                        <div class="form-text">Ingrese el tiempo en minutos.</div>
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary w-100 rounded shadow-sm">Subir</button>
+                        <div class="form-text text-center">Asegurese de llenar el form completo.</div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <button type="button" class="d-none" id="modal_btn" data-bs-toggle="modal" data-bs-target="#resultModal">Hi</button>
+
+    <div class="modal fade" tabindex="-1" aria-hidden="true" id="resultModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Resultados</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
