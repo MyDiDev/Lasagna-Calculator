@@ -10,28 +10,13 @@
 </head>
 
 <body>
-    <main class="px-4">
+    <main class="px-4 h-100">
         <section class="d-flex justify-content-center align-items-center vh-100">
             <div class="bg-body-tertiary rounded p-3 shadow-sm" style="width: 400px;">
                 <h1 class="fw-bold mb-3">Calculadora de lasagna</h1>
-                <form method="post">
-                    <div class="mb-3">
-                        <label for="layer_num" class="form-label">Numero de capas:</label>
-                        <input type="number" id="layer_num" min="1" max="40" name="layerNum"
-                            class="form-control fw-bold fs-3" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="time_num" class="form-label">Tiempo que lleva en el
-                            horno(m):</label>
-                        <input type="number" id="time_num" name="timeNum" min="1" max="40"
-                            class="form-control fw-bold fs-3" required>
-                        <div class="form-text">Ingrese el tiempo en minutos.</div>
-                    </div>
-                    <div class="mb-3">
-                        <button type="submit" class="btn btn-primary w-100 rounded shadow-sm">Subir</button>
-                        <div class="form-text text-center">Asegurese de llenar el form completo.</div>
-                    </div>
-                </form>
+                <hr>
+                <div id="results_container">
+                </div>
             </div>
         </section>
     </main>
@@ -45,9 +30,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div id="results_container">
 
-                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>

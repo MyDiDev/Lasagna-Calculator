@@ -15,21 +15,17 @@ const calcTotalTime = (preparationTime) => {
     return totalCookingTime + preparationTime;
 };
 
-form.addEventListener("submit", ev => {
-    ev.preventDefault();
-    const formData = new FormData(ev.target);
-    const timeInOven = Number(formData.get("timeNum")) ?? 0;
-    const layers = Number(formData.get("layerNum")) ?? 0;
+const timeInOven = Number(prompt("Ingresa el tiempo en el horno:") ?? 0);
+const layers = Number(prompt("Ingresa las capas de la lasagna:") ?? 0);
 
-    const remainingTime = calcRemaingTime(timeInOven);
-    const preparationTime = calcLayerTime(layers);
-    const totalTime = calcTotalTime(preparationTime);
+const remainingTime = calcRemaingTime(timeInOven);
+const preparationTime = calcLayerTime(layers);
+const totalTime = calcTotalTime(preparationTime);
 
-    const resultsContainer = document.getElementById("results_container");
-    resultsContainer.innerHTML = `
-    <p><strong>Tiempo restante en el horno:</strong> ${remainingTime}min</p>
-    <p><strong>Tiempo total de preparacion:</strong> ${preparationTime}min</p>
-    <p><strong>Tiempo total de trabajo:</strong> ${totalTime}min</p>
+const resultsContainer = document.getElementById("results_container");
+resultsContainer.innerHTML = `
+    <p class="bg-body-secondary p-2 rounded border"><strong>Tiempo restante en el horno:</strong> ${remainingTime}min</p>
+    <p class="bg-body-secondary p-2 rounded border"><strong>Tiempo total de preparacion:</strong> ${preparationTime}min</p>
+    <p class="bg-body-secondary p-2 rounded border"><strong>Tiempo total de trabajo:</strong> ${totalTime}min</p>
    `;
-    modalBtn.click();
-});
+modalBtn.click();
