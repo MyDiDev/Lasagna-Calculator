@@ -7,16 +7,23 @@ const calcRemaingTime = (timeInOven) => {
     return totalCookingTime - timeInOven;
 }
 const calcLayerTime = (layers) => layers * 2;
-const calcTotalTime = (preparationTime) => {
-    if (!preparationTime) {
-        alert("No se ha podido calcula el tiempo total de trabajo");
-        return;
-    }
-    return totalCookingTime + preparationTime;
-};
+const calcTotalTime = (preparationTime) => totalCookingTime + preparationTime;
 
-const timeInOven = Number(prompt("Ingresa el tiempo en el horno:") ?? 0);
-const layers = Number(prompt("Ingresa las capas de la lasagna:") ?? 0);
+let timeInOven;
+let layers;
+
+while (true) {
+    timeInOven = Number(prompt("Ingresa el tiempo en el horno:") ?? 0);
+    layers = Number(prompt("Ingresa las capas de la lasagna:") ?? 0);
+
+    if (!layers || !timeInOven) {
+        alert("Faltan valores para realizar el calculo, intente nuevamente");
+        continue;
+    } else {
+        break;
+    }
+
+}
 
 const remainingTime = calcRemaingTime(timeInOven);
 const preparationTime = calcLayerTime(layers);
@@ -24,8 +31,7 @@ const totalTime = calcTotalTime(preparationTime);
 
 const resultsContainer = document.getElementById("results_container");
 resultsContainer.innerHTML = `
-    <p class="bg-body-secondary p-2 rounded border"><strong>Tiempo restante en el horno:</strong> ${remainingTime}min</p>
-    <p class="bg-body-secondary p-2 rounded border"><strong>Tiempo total de preparacion:</strong> ${preparationTime}min</p>
-    <p class="bg-body-secondary p-2 rounded border"><strong>Tiempo total de trabajo:</strong> ${totalTime}min</p>
+    <p class="bg-body-secondary p-2 rounded border text-white"><strong>Tiempo restante en el horno:</strong> ${remainingTime}min</p>
+    <p class="bg-body-secondary p-2 rounded border text-white"><strong>Tiempo total de preparacion:</strong> ${preparationTime}min</p>
+    <p class="bg-body-secondary p-2 rounded border text-white"><strong>Tiempo total de trabajo:</strong> ${totalTime}min</p>
    `;
-modalBtn.click();
